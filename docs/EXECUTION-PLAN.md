@@ -101,11 +101,12 @@ Exit gate: at least two synthetic/test project profiles operate without cross-pr
 
 ## Current status
 
-- **Phase 0 — Repository Baseline: PASS.** Repository metadata and baseline docs were verified through GitHub read-back.
-- **Phase 1 — Environment and Integration Audit: IN PROGRESS / BLOCKED.** See [Integration Audit](INTEGRATION-AUDIT-2026-10-09.md). n8n Cloud free-trial account expiry, remaining quota, and sustainable post-trial Rp0 persistence are not verified. Current Vercel/Supabase usage and project suitability are also not fully verified. Persistent automation and AI-provider-dependent execution remain BLOCKED.
-- **Phase 2 — Fundamental Specification: DRAFT CREATED / REVIEW PENDING.** Added [Fundamental Specification v0.1](FUNDAMENTAL-SPECIFICATION-v0.1.md) and [Architecture Decision Record v0.1](ARCHITECTURE-DECISION-RECORD-v0.1.md). These define the contract and proposed architecture; they are not an implemented or tested system and are not yet user-approved/locked.
-- **Parallel-work boundary:** Phase 2's runtime-independent specification work is permitted while Phase 1 account-specific blockers remain open. Phase 3 runtime selection, cloud resource creation, persistent automation, and production work remain gated.
-- **Scope lock:** `Para Jala - Control Plane v0.1` is a separate project and is strictly excluded; do not inspect, execute, modify, reuse, connect, import, publish, or activate it for Jala Dots Lite v.1.
-- **GAP-ENV-001:** PARTIALLY RESOLVED; trial type known, but post-trial zero-cost persistence is not proven. Persistent automation stays BLOCKED.
-- **n8n project discovery:** Latest search for `Jala Dots Lite` returned zero projects. No workflow or cloud resource was created.
-- **Resource/action boundary:** No new cloud resources were created. No workflow was modified, published, or activated. No external AI/API calls were made.
+- **Phase 0 — Repository Baseline: PASS.** Repository and baseline documents are readable from GitHub.
+- **Phase 1 — Environment and Integration Audit: IN PROGRESS / BLOCKED for persistent runtime.** User screenshot verified 14 days remaining and 0/1000 executions at capture time. Exact expiry date, post-trial billing behavior, and sustainable Rp0 runtime remain unverified. See [Integration Audit](INTEGRATION-AUDIT-2026-10-09.md).
+- **Phase 2 — Fundamental Specification: DRAFT FOR REVIEW.** [Fundamental Specification v0.1](FUNDAMENTAL-SPECIFICATION-v0.1.md) and [ADR v0.1](ARCHITECTURE-DECISION-RECORD-v0.1.md) exist. They are not locked/final; review and approval remain required before treating them as canonical implementation contracts.
+- **Phase 3 — Prototype Architecture: NOT SELECTED.** No runtime or new cloud resource approved.
+- **Phase 4 — Golden Path MVP: REFERENCE IMPLEMENTATION COMMITTED; TEST EXECUTION NOT VERIFIED.** Added [src/golden-path.js](../src/golden-path.js), [test/golden-path.test.js](../test/golden-path.test.js), and [Golden Path Implementation Notes](GOLDEN-PATH-IMPLEMENTATION.md). These are deterministic, in-memory, synthetic-only artifacts; no test runner was executed in this environment, so no test PASS is claimed.
+- **Phase 5 — Validation and Evidence: INCOMPLETE.** Six automated test cases are defined, but their actual execution output, review, evidence bundle, and privacy checks still need to be captured.
+- **Phase 6 — Multi-Project Expansion: NOT STARTED.** Do not add more projects/agents before the first Golden Path tests pass.
+- **Scope lock:** `Para Jala - Control Plane v0.1` remains strictly excluded and must not be inspected, executed, modified, reused, connected, imported, published, or activated for Jala Dots Lite v.1.
+- **Cost and safety boundary:** no new cloud resources, no external AI/API calls, no workflow creation/execution/publishing/activation, no paid usage, and no production deployment occurred during this work.
