@@ -13,7 +13,7 @@ The GitHub repository is available and its project documentation has been commit
 **Strict scope boundary:** `Para Jala - Control Plane v0.1` belongs to a different project. Per explicit user instruction, it is excluded from Jala Dots Lite and must not be inspected further, executed, modified, reused, connected, imported, published, or activated. Its prior failure is not a Jala Dots Lite gap.
 
 **Phase 0:** PASS for repository existence, initial docs, and read-back verification.  
-**Phase 1:** IN PROGRESS. The n8n plan type is now user-confirmed, but trial expiry/quota and sustainable post-trial zero-cost persistence are not verified. Persistent automation remains BLOCKED pending evidence.
+**Phase 1:** IN PROGRESS / BLOCKED for runtime selection. The n8n plan type is user-confirmed, but trial expiry/quota and sustainable post-trial zero-cost persistence are not verified. Persistent automation remains BLOCKED pending evidence. Runtime-independent Phase 2 specification work has proceeded in parallel; see [Fundamental Specification v0.1](FUNDAMENTAL-SPECIFICATION-v0.1.md) and [Architecture Decision Record v0.1](ARCHITECTURE-DECISION-RECORD-v0.1.md). Both are drafts, not reviewed/locked implementation evidence.
 
 ## Findings
 
@@ -68,4 +68,4 @@ Official sources checked on 2026-10-09:
 
 ## Next logical step
 
-Continue Phase 1 without touching the Para Jala workflow. Remaining account-specific evidence must be obtained from the n8n Cloud dashboard: trial start/end or expiry date, remaining execution quota, and post-trial billing behavior (inspect only; do not upgrade). Then review current Vercel/Supabase usage and confirm the intended use is eligible under their free-plan restrictions. Once Phase 1 exit criteria are evidenced, proceed to Phase 2 fundamental specification. Until then, keep persistent automation and paid/provider-dependent AI blocked; a future manual-first Golden Path may use synthetic data and deterministic processing.
+Continue Phase 1 without touching the Para Jala workflow. Remaining account-specific evidence must be obtained from the n8n Cloud dashboard: trial start/end or expiry date, remaining execution quota, and post-trial billing behavior (inspect only; do not upgrade). Review current Vercel/Supabase usage and confirm intended use is eligible under their free-plan restrictions. Phase 2 has started only as a runtime-independent draft while these account-specific gates remain open; review and lock the spec before implementation. A deterministic synthetic Golden Path may be prepared without external APIs, but persistent automation, cloud resource creation, and paid/provider-dependent AI remain BLOCKED until their respective gates pass.
