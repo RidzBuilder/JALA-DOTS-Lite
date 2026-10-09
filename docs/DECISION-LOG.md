@@ -62,3 +62,20 @@ Use this file to record material decisions. New entries should include date, con
 - **Context:** The user confirmed that the connected n8n instance is n8n Cloud free trial and set a target of Rp0 additional spend.
 - **Decision:** Treat n8n Cloud trial as temporary evaluation capacity only. Do not depend on it for persistent production/scheduled execution unless the remaining trial quota, expiry, and post-trial billing behavior are explicitly verified and the path remains Rp0. Do not start paid subscription or paid usage.
 - **Consequences:** GAP-ENV-001 can be resolved only as a cost/persistence decision, not by assuming the trial is permanent. Design the initial golden path so it can be tested manually or through a verified no-additional-cost route; keep persistent automation BLOCKED until a sustainable zero-cost runtime is evidenced.
+
+
+## D-009 — Public repository data classification
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED
+- **Context:** RidzBuilder/JALA-DOTS-Lite is public; future project registry data and execution evidence could expose private information.
+- **Decision:** Apply docs/DATA-CLASSIFICATION-AND-PUBLIC-REPO-BOUNDARY.md. Only PUBLIC-class artifacts may be committed. Use synthetic data for the first Golden Path; never commit secrets, real private project records, raw sensitive logs, or confidential client material.
+- **Consequences:** The public repository is suitable for specifications and synthetic tests, not a default store for live operational records. A private evidence store is not yet selected or implemented.
+
+## D-010 — External AI/API billing and data policy gate
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED
+- **Context:** Connected credentials do not prove free quota, billing eligibility, or acceptable data handling.
+- **Decision:** No model-provider or usage-billed API calls are allowed in the initial Golden Path unless the exact route has verified no-additional-cost capacity and data-use/retention terms, and the user has explicitly approved its use. Prefer deterministic synthetic test processing until then.
+- **Consequences:** GAP-AI-001 remains open for AI-powered features; initial functional validation can proceed without external model calls.
