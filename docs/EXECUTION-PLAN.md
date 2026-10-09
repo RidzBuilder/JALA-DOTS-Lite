@@ -102,5 +102,7 @@ Exit gate: at least two synthetic/test project profiles operate without cross-pr
 ## Current status
 
 - **Phase 0 — Repository Baseline: PASS.** Repository metadata verified; initial documentation committed and read back from `main`. Latest verified baseline commit: `fa14b25b130d4461d4cffbca6ab3031e09b66d84`; root tree enumerated successfully and all five project documents were read back.
-- **Phase 1 — Environment and Integration Audit: IN PROGRESS.** See [Integration Audit](INTEGRATION-AUDIT-2026-10-09.md). Existing services are accessible, but n8n runtime cost/persistence, an existing n8n workflow failure, public-repository data boundaries, model billing/data policy, and hosting quotas remain open.
-- No new cloud resources were created. No existing workflow was modified, published, or activated.
+- **Phase 1 — Environment and Integration Audit: IN PROGRESS.** See [Integration Audit](INTEGRATION-AUDIT-2026-10-09.md). User confirmed n8n Cloud free trial. Remaining gaps: trial expiry/quota and sustainable Rp0 persistence, public-repository data boundaries, model billing/data policy, and hosting quotas.
+- **Scope lock:** `Para Jala - Control Plane v0.1` is a separate project and is strictly excluded; do not touch or use it for Jala Dots Lite v.1.
+- **GAP-ENV-001:** PARTIALLY RESOLVED; trial type known, but post-trial zero-cost persistence is not proven. Persistent automation stays BLOCKED until a sustainable Rp0 runtime is evidenced.
+- No new cloud resources were created. No workflow was modified, published, or activated.
