@@ -198,7 +198,7 @@ No n8n workflow or cloud resource is required to approve this specification. Per
 | GAP-PRIV-001 public/private evidence boundary | POLICY DOCUMENTED; IMPLEMENTATION OPEN | Enforcement test and an approved private evidence strategy before live data |
 | GAP-AI-001 AI provider cost/data policy | BLOCKED for AI runtime | Provider-specific cost/quota/data terms and explicit user approval |
 | GAP-PLATFORM-001 hosting suitability | PARTIALLY AUDITED | Current usage/quota and intended-use eligibility verified |
-| Golden Path implementation | NOT STARTED | Implemented deterministic path plus executed tests and evidence |
+| Golden Path implementation | PARTIAL REFERENCE IMPLEMENTATION; 10 ISOLATED TESTS PASS | Fresh-clone CI; enforced state machine; secure approval; durable idempotency; evidence integrity; privacy enforcement; runtime proof |
 
 ## 13. Change control
 
@@ -216,3 +216,10 @@ The six deterministic tests listed in the acceptance plan passed in an isolated 
 
 This result validates only the six reference cases. It does not establish a production-enforced state machine, authenticated human approvals, durable idempotency, cryptographic evidence integrity, persistent storage, cross-service project isolation, hosting suitability, or zero-cost persistent runtime. This specification remains DRAFT FOR REVIEW and is not locked.
 
+
+
+## Phase 07–12 review addendum — 2026-10-09
+
+The reference implementation was remediated to reject required fields longer than 2,000 characters and block a conflicting logical request that reuses a project-scoped idempotency key. Ten synthetic Node.js tests passed in an isolated Node.js v22.16.0 run after the remediation was corrected. See [Phase 07–12 Execution Report](PHASE-07-12-EXECUTION-REPORT-2026-10-09.md).
+
+This does not satisfy AC-05/AC-06 as a secure approval mechanism: approval remains caller-controlled and is not bound to an authenticated actor, action digest, target, or expiry. State transitions are still represented as output trace rather than persistently enforced. Idempotency remains process-local; evidence integrity and private storage are not implemented. Therefore this specification remains **DRAFT FOR REVIEW — NOT LOCKED**.
