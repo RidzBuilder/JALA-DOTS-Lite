@@ -101,6 +101,6 @@ Exit gate: at least two synthetic/test project profiles operate without cross-pr
 
 ## Current status
 
-- **Phase 0 — Repository Baseline: PASS.** Repository metadata verified; initial documentation committed and read back from `main`. Baseline commit after initial audit record: `a40ffa8371cf94fc089dda8a6c3b3fbe8cb49f4b`.
+- **Phase 0 — Repository Baseline: PASS.** Repository metadata verified; initial documentation committed and read back from `main`. Latest verified baseline commit: `fa14b25b130d4461d4cffbca6ab3031e09b66d84`; root tree enumerated successfully and all five project documents were read back.
 - **Phase 1 — Environment and Integration Audit: IN PROGRESS.** See [Integration Audit](INTEGRATION-AUDIT-2026-10-09.md). Existing services are accessible, but n8n runtime cost/persistence, an existing n8n workflow failure, public-repository data boundaries, model billing/data policy, and hosting quotas remain open.
 - No new cloud resources were created. No existing workflow was modified, published, or activated.
