@@ -112,3 +112,11 @@ Use this file to record material decisions. New entries should include date, con
 - **Decision:** Commit a small deterministic in-memory reference implementation and synthetic Node built-in tests. No network, credentials, durable storage, or external side effects are allowed in this reference.
 - **Consequences:** Code and test definitions are now available for execution/review. The tests are not considered PASS until the test command is actually run and its output is reviewed. This implementation is not production-ready.
 
+## D-015 — Six deterministic Golden Path tests passed in isolated local run
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED WITH SCOPE LIMITATION
+- **Context:** Source and test files were read back from GitHub and reproduced into a temporary isolated directory. A fresh git clone was unavailable because DNS/network access to github.com failed in the execution environment.
+- **Decision:** Record the six local test cases as PASS for the tested source content only. Preserve the limitation that this is not fresh-checkout CI, integration, or production evidence.
+- **Consequences:** The narrow deterministic test-run gate is satisfied for the six defined cases. Phase 5 remains partially complete; runtime, privacy enforcement, durable storage, authenticated approvals, and production gates remain open. See [Golden Path Validation Report](GOLDEN-PATH-VALIDATION-REPORT-2026-10-09.md).
+
