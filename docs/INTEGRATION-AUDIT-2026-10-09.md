@@ -58,6 +58,22 @@ Official sources checked on 2026-10-09:
 7. Supabase Free is a conditional candidate only: inactive projects may pause after 7 days and quotas apply; the existing Digital Marketer project is not approved for reuse.
 8. No paid resources were created, no workflows were published or activated, and no existing workflow was modified.
 
+
+## Screenshot evidence update — 2026-10-09
+
+The user supplied a dashboard screenshot from `ridzbuilder.app.n8n.cloud`. Visible evidence in that screenshot:
+- Trial banner: **14 days left**.
+- Execution counter: **0/1000 Executions**.
+- Gateway credits panel: **$1.99 left**.
+- Device status bar shows Friday 9 Oct at 15:52.
+
+Interpretation:
+- Trial time remaining and the displayed execution counter are now **SCREENSHOT-VERIFIED for the moment of capture**.
+- The screenshot does not show the exact calendar expiry date, the post-trial account/billing behavior, or proof of a sustainable Rp0 runtime.
+- Gateway credits are a displayed balance only; they are not evidence of unlimited or no-cost API usage and must not be consumed without a separate cost/data-policy gate.
+- `GAP-ENV-001` remains **PARTIALLY RESOLVED / BLOCKED for persistent automation**. No upgrade or paid action is authorized by this evidence.
+- Screenshot evidence is referenced as user-provided evidence in this audit; the image itself is not committed to the public repository.
+
 ## Blocking and follow-up items
 
 - **GAP-ENV-001 — n8n runtime cost and persistence:** PARTIALLY RESOLVED. Instance type confirmed as Cloud free trial; sustainable post-trial Rp0 persistence is NOT VERIFIED, so persistent automation remains BLOCKED. Required evidence: trial expiry/remaining quota and a sustainable no-additional-cost runtime decision.
