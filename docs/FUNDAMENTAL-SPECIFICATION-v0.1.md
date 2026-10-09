@@ -1,6 +1,6 @@
 # Fundamental Specification v0.1 — Jala Dots Lite
 
-- **Status:** DRAFT FOR REVIEW
+- **Status:** DRAFT FOR REVIEW — deterministic reference tests partially validated
 - **Date:** 2026-10-09
 - **Repository:** `RidzBuilder/JALA-DOTS-Lite`
 - **Cost target:** Rp0 additional spend
@@ -209,3 +209,10 @@ Material changes to state definitions, approval gates, data classes, runtime, or
 - a retest with evidence.
 
 This document is a draft baseline. No production-readiness claim is made.
+
+## Validation addendum — 2026-10-09
+
+The six deterministic tests listed in the acceptance plan passed in an isolated Node.js v22.16.0 run using source and test content read back from GitHub. See [Golden Path Validation Report](GOLDEN-PATH-VALIDATION-REPORT-2026-10-09.md).
+
+This result validates only the six reference cases. It does not establish a production-enforced state machine, authenticated human approvals, durable idempotency, cryptographic evidence integrity, persistent storage, cross-service project isolation, hosting suitability, or zero-cost persistent runtime. This specification remains DRAFT FOR REVIEW and is not locked.
+
