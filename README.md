@@ -46,7 +46,7 @@ n8n, GitHub, Notion, Supabase, Vercel, and AI model providers are candidates—n
 
 ## Current phase
 
-**Phase 0 — Repository baseline: PASS. Phase 1 — Environment and integration audit: IN PROGRESS / BLOCKED on account-specific n8n trial evidence.** The user confirmed n8n Cloud free trial; official documentation states a 14-day trial with a 1,000-execution limit, but this account's expiry and remaining quota are not visible through connected tools. Vercel Hobby and Supabase Free have conditional usage/eligibility constraints. No production runtime is selected and no paid dependency is approved. See [Integration Audit](docs/INTEGRATION-AUDIT-2026-10-09.md), [GAP-ENV-001 Resolution](docs/GAP-ENV-001-RESOLUTION.md), [Fundamental Specification v0.1](docs/FUNDAMENTAL-SPECIFICATION-v0.1.md), and [Architecture Decision Record v0.1](docs/ARCHITECTURE-DECISION-RECORD-v0.1.md). The specification and ADR are drafts pending review. A small deterministic, in-memory Golden Path reference and Node built-in test suite have been committed; tests have not yet been executed, and no persistent runtime is approved.
+**Phase 0 — Repository baseline: PASS. Phase 1 — Environment and integration audit: IN PROGRESS / BLOCKED on account-specific n8n trial evidence.** The user confirmed n8n Cloud free trial; official documentation states a 14-day trial with a 1,000-execution limit, but this account's expiry and remaining quota are not visible through connected tools. Vercel Hobby and Supabase Free have conditional usage/eligibility constraints. No production runtime is selected and no paid dependency is approved. See [Integration Audit](docs/INTEGRATION-AUDIT-2026-10-09.md), [GAP-ENV-001 Resolution](docs/GAP-ENV-001-RESOLUTION.md), [Fundamental Specification v0.1](docs/FUNDAMENTAL-SPECIFICATION-v0.1.md), and [Architecture Decision Record v0.1](docs/ARCHITECTURE-DECISION-RECORD-v0.1.md). The specification and ADR are drafts pending review. A small deterministic, in-memory Golden Path reference and Node built-in test suite have been committed; six deterministic tests passed in an isolated Node.js run; fresh-checkout CI and production validation remain outstanding, and no persistent runtime is approved.
 
 See:
 - [Project Charter](docs/PROJECT-CHARTER.md)
@@ -55,5 +55,6 @@ See:
 - [GAP-ENV-001 Resolution](docs/GAP-ENV-001-RESOLUTION.md)
 - [Data Classification and Public Repository Boundary](docs/DATA-CLASSIFICATION-AND-PUBLIC-REPO-BOUNDARY.md)
 - [Golden Path Implementation Notes](docs/GOLDEN-PATH-IMPLEMENTATION.md)
+- [Golden Path Validation Report](docs/GOLDEN-PATH-VALIDATION-REPORT-2026-10-09.md)
 - [Deterministic Golden Path source](src/golden-path.js)
 - [Golden Path tests](test/golden-path.test.js)
