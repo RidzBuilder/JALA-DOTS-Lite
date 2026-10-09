@@ -52,3 +52,5 @@ See:
 - [Project Charter](docs/PROJECT-CHARTER.md)
 - [Execution Plan](docs/EXECUTION-PLAN.md)
 - [Decision Log](docs/DECISION-LOG.md)
+- [GAP-ENV-001 Resolution](docs/GAP-ENV-001-RESOLUTION.md)
+- [Data Classification and Public Repository Boundary](docs/DATA-CLASSIFICATION-AND-PUBLIC-REPO-BOUNDARY.md)
