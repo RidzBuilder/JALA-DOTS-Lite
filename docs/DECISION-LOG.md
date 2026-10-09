@@ -120,3 +120,11 @@ Use this file to record material decisions. New entries should include date, con
 - **Decision:** Record the six local test cases as PASS for the tested source content only. Preserve the limitation that this is not fresh-checkout CI, integration, or production evidence.
 - **Consequences:** The narrow deterministic test-run gate is satisfied for the six defined cases. Phase 5 remains partially complete; runtime, privacy enforcement, durable storage, authenticated approvals, and production gates remain open. See [Golden Path Validation Report](GOLDEN-PATH-VALIDATION-REPORT-2026-10-09.md).
 
+
+## D-016 — Phase 07–12 remediation and residual gates
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED WITH SCOPE LIMITATION
+- **Context:** Phase 07–12 audit identified input-size and idempotency-key conflict gaps in the deterministic reference, alongside unresolved authenticated approval, durable state, evidence integrity, privacy enforcement, and runtime cost/persistence gates.
+- **Decision:** Add a 2,000-character required-field limit; block a reused project/idempotency key when the logical request fingerprint changes; add four edge-case regression tests. Record the 10-test isolated Node.js v22.16.0 retest as PASS for the reference test suite only. Keep Phase 10 partial, specification DRAFT / NOT LOCKED, and persistent runtime BLOCKED.
+- **Consequences:** No production readiness is implied. Fresh-clone CI, cryptographic/independent evidence, private evidence storage, secure approval enforcement, durable idempotency, and account-specific Rp0 runtime proof remain open. See [Phase 07–12 Execution Report](PHASE-07-12-EXECUTION-REPORT-2026-10-09.md).
