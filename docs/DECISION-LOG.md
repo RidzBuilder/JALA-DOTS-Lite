@@ -47,10 +47,18 @@ Use this file to record material decisions. New entries should include date, con
 - **Consequences:** No service is considered connected or production-ready merely because an integration tool exists.
 
 
-## D-007 — Reuse existing Para Jala control plane only after remediation
+## D-007 — Strict exclusion of Para Jala workflow from Jala Dots Lite
 
 - **Date:** 2026-10-09
-- **Status:** DEFERRED / BLOCKED
-- **Context:** The connected n8n instance contains `Para Jala - Control Plane v0.1`, currently inactive. A recent run failed because `Validation State` referenced `Evidence Ledger` even though that node had not executed.
-- **Decision:** Treat the existing workflow as a reuse candidate, not as a validated runtime. Do not activate or publish it until the graph issue is diagnosed, a controlled test passes, and the result is documented.
-- **Consequences:** Avoid creating a duplicate control plane before evaluating whether the existing workflow can safely meet the Jala Dots Lite requirements.
+- **Status:** ACCEPTED / LOCKED
+- **Context:** The user clarified that `Para Jala - Control Plane v0.1` belongs to a different project and is not part of Jala Dots Lite v.1.
+- **Decision:** Do not open for further inspection, execute, modify, reuse, connect, import, publish, activate, or otherwise use the Para Jala workflow as part of Jala Dots Lite. Its prior failure is not a Jala Dots Lite blocker and must not be used to infer Jala Dots Lite runtime behavior.
+- **Consequences:** Jala Dots Lite must have its own isolated workflow/project and independent evidence. Any future cross-project reuse requires a new explicit user decision; until then, strict separation applies.
+
+## D-008 — n8n Cloud free trial is temporary, not the zero-cost production baseline
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED
+- **Context:** The user confirmed that the connected n8n instance is n8n Cloud free trial and set a target of Rp0 additional spend.
+- **Decision:** Treat n8n Cloud trial as temporary evaluation capacity only. Do not depend on it for persistent production/scheduled execution unless the remaining trial quota, expiry, and post-trial billing behavior are explicitly verified and the path remains Rp0. Do not start paid subscription or paid usage.
+- **Consequences:** GAP-ENV-001 can be resolved only as a cost/persistence decision, not by assuming the trial is permanent. Design the initial golden path so it can be tested manually or through a verified no-additional-cost route; keep persistent automation BLOCKED until a sustainable zero-cost runtime is evidenced.
