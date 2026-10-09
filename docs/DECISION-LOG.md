@@ -45,3 +45,12 @@ Use this file to record material decisions. New entries should include date, con
 - **Context:** Multiple plugins and services may be available, but account connectivity and free-tier eligibility have not all been verified.
 - **Decision:** GitHub, Notion, n8n, Supabase, Vercel, and AI providers are candidates until audited. Select the minimum viable stack from evidence.
 - **Consequences:** No service is considered connected or production-ready merely because an integration tool exists.
+
+
+## D-007 — Reuse existing Para Jala control plane only after remediation
+
+- **Date:** 2026-10-09
+- **Status:** DEFERRED / BLOCKED
+- **Context:** The connected n8n instance contains `Para Jala - Control Plane v0.1`, currently inactive. A recent run failed because `Validation State` referenced `Evidence Ledger` even though that node had not executed.
+- **Decision:** Treat the existing workflow as a reuse candidate, not as a validated runtime. Do not activate or publish it until the graph issue is diagnosed, a controlled test passes, and the result is documented.
+- **Consequences:** Avoid creating a duplicate control plane before evaluating whether the existing workflow can safely meet the Jala Dots Lite requirements.
