@@ -56,16 +56,16 @@ Official sources checked on 2026-10-09:
 5. The hosting category is now user-confirmed as n8n Cloud free trial; official docs publish a 14-day/1,000-execution trial, but account-specific remaining quota, expiry, and post-trial billing state remain unverified.
 6. Vercel Hobby is a conditional candidate only: official terms restrict it to personal/non-commercial use, so commercial use must not be assumed eligible.
 7. Supabase Free is a conditional candidate only: inactive projects may pause after 7 days and quotas apply; the existing Digital Marketer project is not approved for reuse.
-6. No paid resources were created, no workflows were published or activated, and no existing workflow was modified.
+8. No paid resources were created, no workflows were published or activated, and no existing workflow was modified.
 
 ## Blocking and follow-up items
 
 - **GAP-ENV-001 — n8n runtime cost and persistence:** PARTIALLY RESOLVED. Instance type confirmed as Cloud free trial; sustainable post-trial Rp0 persistence is NOT VERIFIED, so persistent automation remains BLOCKED. Required evidence: trial expiry/remaining quota and a sustainable no-additional-cost runtime decision.
 - **GAP-SCOPE-001 — Project separation:** CLOSED by explicit user decision. Para Jala workflow is excluded and must not be touched or used for Jala Dots Lite.
-- **GAP-PRIV-001 — Public repository data boundary:** Define an explicit public/private artifact classification before adding project registry data or evidence.
-- **GAP-AI-001 — Model billing and data policy:** Identify a suitable model path with known cost/quotas and acceptable data handling; do not infer free usage from connector availability.
+- **GAP-PRIV-001 — Public repository data boundary:** POLICY DOCUMENTED. See [Data Classification and Public Repository Boundary](DATA-CLASSIFICATION-AND-PUBLIC-REPO-BOUNDARY.md) and D-009. Automated enforcement and a private store for INTERNAL/SENSITIVE records are not implemented; do not commit live records.
+- **GAP-AI-001 — Model billing and data policy:** POLICY GATE DOCUMENTED via D-010. No external model/API calls in the initial Golden Path unless exact no-additional-cost eligibility and data-use terms are verified and explicitly approved. AI-powered runtime remains BLOCKED pending provider-specific evidence.
 - **GAP-PLATFORM-001 — Hosting quotas and eligibility:** PARTIALLY AUDITED. Vercel Hobby's personal/non-commercial limitation and Supabase Free's inactivity-pause/quota behavior are documented from official sources. Current account usage, Jala Dots Lite project scope, and suitability for any commercial production use remain unverified.
 
 ## Next logical step
 
-Continue Phase 1 without touching the Para Jala workflow: verify remaining n8n trial quota/expiry using user-visible account settings if available, complete cost/privacy checks for the minimum stack, and determine whether the first golden path should be manual-first while persistent automation remains blocked. Then formalize the Jala Dots Lite-specific architecture and create only isolated project resources.
+Continue Phase 1 without touching the Para Jala workflow. Remaining account-specific evidence must be obtained from the n8n Cloud dashboard: trial start/end or expiry date, remaining execution quota, and post-trial billing behavior (inspect only; do not upgrade). Then review current Vercel/Supabase usage and confirm the intended use is eligible under their free-plan restrictions. Once Phase 1 exit criteria are evidenced, proceed to Phase 2 fundamental specification. Until then, keep persistent automation and paid/provider-dependent AI blocked; a future manual-first Golden Path may use synthetic data and deterministic processing.
