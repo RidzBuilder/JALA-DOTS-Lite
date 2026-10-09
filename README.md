@@ -46,7 +46,7 @@ n8n, GitHub, Notion, Supabase, Vercel, and AI model providers are candidates—n
 
 ## Current phase
 
-**Phase 0 — Repository baseline: PASS. Phase 1 — Environment and integration audit: IN PROGRESS.** Initial documentation is committed and verified. Existing n8n, Notion, Vercel, and Supabase connections are accessible, but provider cost/quotas, privacy, and runtime suitability are not yet fully validated. See [Integration Audit](docs/INTEGRATION-AUDIT-2026-10-09.md).
+**Phase 0 — Repository baseline: PASS. Phase 1 — Environment and integration audit: IN PROGRESS / BLOCKED on account-specific n8n trial evidence.** The user confirmed n8n Cloud free trial; official documentation states a 14-day trial with a 1,000-execution limit, but this account's expiry and remaining quota are not visible through connected tools. Vercel Hobby and Supabase Free have conditional usage/eligibility constraints. No production runtime is selected and no paid dependency is approved. See [Integration Audit](docs/INTEGRATION-AUDIT-2026-10-09.md) and [GAP-ENV-001 Resolution](docs/GAP-ENV-001-RESOLUTION.md).
 
 See:
 - [Project Charter](docs/PROJECT-CHARTER.md)
