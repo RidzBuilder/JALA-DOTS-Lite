@@ -79,3 +79,20 @@ Use this file to record material decisions. New entries should include date, con
 - **Context:** Connected credentials do not prove free quota, billing eligibility, or acceptable data handling.
 - **Decision:** No model-provider or usage-billed API calls are allowed in the initial Golden Path unless the exact route has verified no-additional-cost capacity and data-use/retention terms, and the user has explicitly approved its use. Prefer deterministic synthetic test processing until then.
 - **Consequences:** GAP-AI-001 remains open for AI-powered features; initial functional validation can proceed without external model calls.
+
+## D-011 — Runtime-independent deterministic Golden Path first
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED
+- **Context:** n8n trial persistence and account-specific limits remain unverified; public GitHub is not approved for live evidence; provider billing/data terms are not verified.
+- **Decision:** The first Golden Path must use synthetic inputs and deterministic processing, without external model/API calls, credentials, outbound communications, or production side effects.
+- **Consequences:** Contract-level implementation and tests can proceed without assuming a persistent runtime. Passing these tests does not establish hosting, scheduling, or AI capability.
+
+## D-012 — Runtime-independent specification may proceed while environment gates remain open
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED
+- **Context:** Phase 1 has unresolved account-specific cost/persistence gates, while the core task/state/evidence contract can be specified without creating resources.
+- **Decision:** Draft Phase 2 specification work may proceed in parallel, but must remain DRAFT pending review. Runtime selection, persistent automation, cloud resource creation, and production work remain blocked until their respective gates pass.
+- **Consequences:** This avoids idle progress without weakening evidence or cost controls. No implementation or production readiness is implied by the draft.
+
