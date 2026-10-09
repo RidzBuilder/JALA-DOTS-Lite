@@ -96,3 +96,19 @@ Use this file to record material decisions. New entries should include date, con
 - **Decision:** Draft Phase 2 specification work may proceed in parallel, but must remain DRAFT pending review. Runtime selection, persistent automation, cloud resource creation, and production work remain blocked until their respective gates pass.
 - **Consequences:** This avoids idle progress without weakening evidence or cost controls. No implementation or production readiness is implied by the draft.
 
+## D-013 — n8n dashboard screenshot evidence captured
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED
+- **Context:** The user supplied a screenshot of the n8n Cloud dashboard showing 14 days left, 0/1000 executions, and $1.99 Gateway credits remaining.
+- **Decision:** Record these values as screenshot-verified at capture time only. Do not infer exact expiry date, post-trial billing behavior, persistent Rp0 runtime, or unlimited free AI usage from the screenshot.
+- **Consequences:** GAP-ENV-001 remains partially resolved and persistent automation remains blocked.
+
+## D-014 — Commit deterministic in-memory Golden Path before selecting runtime
+
+- **Date:** 2026-10-09
+- **Status:** ACCEPTED
+- **Context:** Account-specific runtime cost and persistence are not verified; the first functional path can be expressed without external services.
+- **Decision:** Commit a small deterministic in-memory reference implementation and synthetic Node built-in tests. No network, credentials, durable storage, or external side effects are allowed in this reference.
+- **Consequences:** Code and test definitions are now available for execution/review. The tests are not considered PASS until the test command is actually run and its output is reviewed. This implementation is not production-ready.
+
