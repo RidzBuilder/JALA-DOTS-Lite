@@ -46,7 +46,7 @@ n8n, GitHub, Notion, Supabase, Vercel, and AI model providers are candidates—n
 
 ## Current phase
 
-**Phase 0 — Repository baseline.** Repository metadata is verified; the repository was initially empty. Provider access, free-tier eligibility, security settings, and runtime suitability remain to be audited.
+**Phase 0 — Repository baseline: PASS. Phase 1 — Environment and integration audit: IN PROGRESS.** Initial documentation is committed and verified. Existing n8n, Notion, Vercel, and Supabase connections are accessible, but provider cost/quotas, privacy, and runtime suitability are not yet fully validated. See [Integration Audit](docs/INTEGRATION-AUDIT-2026-10-09.md).
 
 See:
 - [Project Charter](docs/PROJECT-CHARTER.md)
