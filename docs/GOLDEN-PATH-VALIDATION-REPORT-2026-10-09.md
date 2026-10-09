@@ -33,3 +33,10 @@
 ## Decision
 
 The six defined deterministic contract tests **PASS in the isolated local test run**. This closes only the narrow test-run requirement for these six reference cases. It does not close GAP-ENV-001, GAP-PRIV-001, GAP-AI-001, GAP-PLATFORM-001, or production-readiness gates.
+
+
+## Superseding remediation retest — 2026-10-09
+
+The earlier six-test result above is historical and has been superseded by the Phase 07–12 remediation run. The deterministic reference and test suite were extended to cover non-object input, oversized fields, conflicting payloads under the same idempotency key, and same-payload duplicate retries. An intermediate remediation test run returned 9 passed / 1 failed; the logical fingerprint was corrected to exclude the per-submission `taskId`, after which the retest returned **10 passed, 0 failed, 0 skipped** on Node.js v22.16.0. The run was performed in an isolated local directory and is not a fresh-clone CI run. See [Phase 07–12 Execution Report](PHASE-07-12-EXECUTION-REPORT-2026-10-09.md).
+
+The test result applies only to the deterministic in-memory reference. Approval authentication, enforced state transitions, durable idempotency, cryptographic/immutable evidence, privacy enforcement, cross-service isolation, and persistent zero-cost runtime remain unverified or blocked.
