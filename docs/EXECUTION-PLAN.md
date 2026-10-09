@@ -101,8 +101,11 @@ Exit gate: at least two synthetic/test project profiles operate without cross-pr
 
 ## Current status
 
-- **Phase 0 — Repository Baseline: PASS.** Repository metadata verified; initial documentation committed and read back from `main`. Latest verified baseline commit: `fa14b25b130d4461d4cffbca6ab3031e09b66d84`; root tree enumerated successfully and the initial project baseline documents were read back.
-- **Phase 1 — Environment and Integration Audit: IN PROGRESS / BLOCKED.** See [Integration Audit](INTEGRATION-AUDIT-2026-10-09.md). User confirmed n8n Cloud free trial; official documentation states 14 days / 1,000 executions, but account-specific expiry and remaining quota still require dashboard evidence. Vercel Hobby and Supabase Free constraints are recorded; remaining gaps: current Vercel/Supabase usage and eligibility; automated enforcement/private evidence storage; provider-specific AI billing/data-use verification.
-- **Scope lock:** `Para Jala - Control Plane v0.1` is a separate project and is strictly excluded; do not touch or use it for Jala Dots Lite v.1.
-- **GAP-ENV-001:** PARTIALLY RESOLVED; trial type known, but post-trial zero-cost persistence is not proven. Persistent automation stays BLOCKED until a sustainable Rp0 runtime is evidenced.
-- No new cloud resources were created. No workflow was modified, published, or activated.
+- **Phase 0 — Repository Baseline: PASS.** Repository metadata and baseline docs were verified through GitHub read-back.
+- **Phase 1 — Environment and Integration Audit: IN PROGRESS / BLOCKED.** See [Integration Audit](INTEGRATION-AUDIT-2026-10-09.md). n8n Cloud free-trial account expiry, remaining quota, and sustainable post-trial Rp0 persistence are not verified. Current Vercel/Supabase usage and project suitability are also not fully verified. Persistent automation and AI-provider-dependent execution remain BLOCKED.
+- **Phase 2 — Fundamental Specification: DRAFT CREATED / REVIEW PENDING.** Added [Fundamental Specification v0.1](FUNDAMENTAL-SPECIFICATION-v0.1.md) and [Architecture Decision Record v0.1](ARCHITECTURE-DECISION-RECORD-v0.1.md). These define the contract and proposed architecture; they are not an implemented or tested system and are not yet user-approved/locked.
+- **Parallel-work boundary:** Phase 2's runtime-independent specification work is permitted while Phase 1 account-specific blockers remain open. Phase 3 runtime selection, cloud resource creation, persistent automation, and production work remain gated.
+- **Scope lock:** `Para Jala - Control Plane v0.1` is a separate project and is strictly excluded; do not inspect, execute, modify, reuse, connect, import, publish, or activate it for Jala Dots Lite v.1.
+- **GAP-ENV-001:** PARTIALLY RESOLVED; trial type known, but post-trial zero-cost persistence is not proven. Persistent automation stays BLOCKED.
+- **n8n project discovery:** Latest search for `Jala Dots Lite` returned zero projects. No workflow or cloud resource was created.
+- **Resource/action boundary:** No new cloud resources were created. No workflow was modified, published, or activated. No external AI/API calls were made.
