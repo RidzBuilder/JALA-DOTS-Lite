@@ -25,6 +25,18 @@ The GitHub repository is available and its initial documentation has been commit
 | Supabase | Organization `POROS UNIVERSE` reports Free plan. One existing project, `Digital Marketer`, is ACTIVE_HEALTHY in `ap-southeast-1`. | Candidate for persistence only if needed. Reuse or create resources only after scope, isolation, capacity, and cost checks. No new project created. |
 | AI providers | n8n lists OpenAI, Hugging Face, Firecrawl, and Gmail credentials by name; credential secrets were not accessed. | Credential existence does not prove available credits, free-tier eligibility, or data-policy suitability. Do not call usage-billed AI APIs until pricing/limits are verified and approval is explicit. |
 
+## n8n free-tier interpretation
+
+Official n8n documentation distinguishes the hosted Cloud trial from the indefinitely free self-hosted Community edition:
+- n8n Cloud offers a limited free trial (the pricing page currently lists 1,000 executions for the trial); it is not an assumed permanent free runtime.
+- Self-hosted Community edition is free software, but it still requires an always-available host if scheduled workflows must run while the iPad is offline.
+- The current connected n8n instance's exact hosting model and billing state were not surfaced by the integration audit.
+
+Sources checked on 2026-10-09:
+- https://n8n.io/pricing/
+- https://docs.n8n.io/get-started/choose-how-to-use-n8n/
+- https://docs.n8n.io/deploy/host-n8n/community-edition-features/
+
 ## Security and cost notes
 
 1. The repository is public. Keep secrets, private client data, private project records, and sensitive logs out of the repository.
