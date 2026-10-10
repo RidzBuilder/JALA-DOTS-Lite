@@ -57,5 +57,7 @@ See:
 - [Golden Path Implementation Notes](docs/GOLDEN-PATH-IMPLEMENTATION.md)
 - [Golden Path Validation Report](docs/GOLDEN-PATH-VALIDATION-REPORT-2026-10-09.md)
 - [Phase 07–12 Execution Report](docs/PHASE-07-12-EXECUTION-REPORT-2026-10-09.md)
+- [Phase 13–18 Execution Report](docs/PHASE-13-18-EXECUTION-REPORT-2026-10-10.md)
+- [Golden Path GitHub Actions workflow](.github/workflows/golden-path-tests.yml)
 - [Deterministic Golden Path source](src/golden-path.js)
 - [Golden Path tests](test/golden-path.test.js)
