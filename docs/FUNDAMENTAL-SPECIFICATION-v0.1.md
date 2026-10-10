@@ -223,3 +223,10 @@ This result validates only the six reference cases. It does not establish a prod
 The reference implementation was remediated to reject required fields longer than 2,000 characters and block a conflicting logical request that reuses a project-scoped idempotency key. Ten synthetic Node.js tests passed in an isolated Node.js v22.16.0 run after the remediation was corrected. See [Phase 07–12 Execution Report](PHASE-07-12-EXECUTION-REPORT-2026-10-09.md).
 
 This does not satisfy AC-05/AC-06 as a secure approval mechanism: approval remains caller-controlled and is not bound to an authenticated actor, action digest, target, or expiry. State transitions are still represented as output trace rather than persistently enforced. Idempotency remains process-local; evidence integrity and private storage are not implemented. Therefore this specification remains **DRAFT FOR REVIEW — NOT LOCKED**.
+
+
+## Phase 13–18 review addendum — 2026-10-10
+
+The current deterministic reference was re-read from GitHub, reproduced locally byte-for-byte by matching Git blob IDs, and tested with Node.js v22.16.0: 10 passed, 0 failed. A GitHub Actions regression workflow has been added, but its run status is not verified; the GitHub commit-status endpoint returned no statuses and direct fresh-checkout access was blocked by DNS resolution. See [Phase 13–18 Execution Report](PHASE-13-18-EXECUTION-REPORT-2026-10-10.md).
+
+The review confirms that the implementation still does not satisfy the complete normative contract for authenticated approval bound to action/target, enforced state transitions, durable idempotency, independently verifiable evidence, automated privacy enforcement, or cross-service isolation. Therefore **Fundamental Specification v0.1 remains DRAFT FOR REVIEW — NOT LOCKED**. Persistent runtime remains **BLOCKED / NO-GO** pending evidence for sustainable Rp0 operation, persistence, and security controls.
