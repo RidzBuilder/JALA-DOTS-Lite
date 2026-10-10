@@ -128,3 +128,11 @@ Use this file to record material decisions. New entries should include date, con
 - **Context:** Phase 07–12 audit identified input-size and idempotency-key conflict gaps in the deterministic reference, alongside unresolved authenticated approval, durable state, evidence integrity, privacy enforcement, and runtime cost/persistence gates.
 - **Decision:** Add a 2,000-character required-field limit; block a reused project/idempotency key when the logical request fingerprint changes; add four edge-case regression tests. Record the 10-test isolated Node.js v22.16.0 retest as PASS for the reference test suite only. Keep Phase 10 partial, specification DRAFT / NOT LOCKED, and persistent runtime BLOCKED.
 - **Consequences:** No production readiness is implied. Fresh-clone CI, cryptographic/independent evidence, private evidence storage, secure approval enforcement, durable idempotency, and account-specific Rp0 runtime proof remain open. See [Phase 07–12 Execution Report](PHASE-07-12-EXECUTION-REPORT-2026-10-09.md).
+
+## D-017 — Phase 13–18 CI, evidence, and runtime gates
+
+- **Date:** 2026-10-10
+- **Status:** ACCEPTED WITH SCOPE LIMITATION
+- **Context:** The exact current Golden Path source and test blob IDs were reproduced in an isolated local directory and matched GitHub read-back; 10 tests passed. Direct GitHub network access failed due DNS resolution, and the GitHub commit-status endpoint returned no statuses for the workflow commit. A GitHub Actions test workflow was added, but its execution status was not verified.
+- **Decision:** Record the local 10-test result as PASS only for the exact reference source/test bytes. Record fresh checkout and GitHub Actions CI as NOT VERIFIED. Keep authenticated approval, enforced state transitions, durable evidence/idempotency, automated privacy enforcement, and persistent zero-cost runtime as open gates. Runtime remains NO-GO and Fundamental Specification v0.1 remains DRAFT / NOT LOCKED.
+- **Consequences:** No production readiness claim. See [Phase 13–18 Execution Report](PHASE-13-18-EXECUTION-REPORT-2026-10-10.md).
