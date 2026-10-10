@@ -136,3 +136,12 @@ Use this file to record material decisions. New entries should include date, con
 - **Context:** The exact current Golden Path source and test blob IDs were reproduced in an isolated local directory and matched GitHub read-back; 10 tests passed. Direct GitHub network access failed due DNS resolution, and the GitHub commit-status endpoint returned no statuses for the workflow commit. A GitHub Actions test workflow was added, but its execution status was not verified.
 - **Decision:** Record the local 10-test result as PASS only for the exact reference source/test bytes. Record fresh checkout and GitHub Actions CI as NOT VERIFIED. Keep authenticated approval, enforced state transitions, durable evidence/idempotency, automated privacy enforcement, and persistent zero-cost runtime as open gates. Runtime remains NO-GO and Fundamental Specification v0.1 remains DRAFT / NOT LOCKED.
 - **Consequences:** No production readiness claim. See [Phase 13–18 Execution Report](PHASE-13-18-EXECUTION-REPORT-2026-10-10.md).
+
+
+## D-018 — GitHub Actions Golden Path run verified
+
+- **Date:** 2026-10-10
+- **Status:** ACCEPTED WITH SCOPE LIMITATION
+- **Context:** The GitHub Actions API was queried directly after the prior report had marked CI unverified. Run `38017180138` (`Golden Path Tests`) on `main`, commit `101fddc41a6db37c2baa91ad18a8cc22a4b37129`, completed with `conclusion: success`; job `golden-path` and its checkout, Node.js setup, and test steps were completed successfully.
+- **Decision:** Update the execution report and plan to record CI as PASS for the deterministic reference test on that exact commit. Phase 13 remains PARTIAL because independent complete commit/tree ancestry verification and direct local clone are still unavailable.
+- **Consequences:** CI PASS does not close secure approval, enforced state transitions, durable idempotency/evidence, privacy/isolation, or persistent Rp0 runtime gates. Runtime remains NO-GO and Fundamental Specification v0.1 remains DRAFT / NOT LOCKED. Evidence: https://github.com/RidzBuilder/JALA-DOTS-Lite/actions/runs/38017180138
