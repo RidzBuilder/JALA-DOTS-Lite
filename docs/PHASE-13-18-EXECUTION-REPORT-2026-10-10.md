@@ -10,7 +10,7 @@
 
 | Phase | Status | Evidence and gate |
 |---|---|---|
-| 13 — Checkpoint and repository integrity | PARTIAL / BLOCKED for fresh checkout | Latest documented commit before this execution: `cd8cb1e1a9cd0b3fdb7a7670476fd6b9e5f219f2`; subsequent workflow commit: `ab528b65b87997d9a6add296d8f86e48993502fe`. GitHub read-back verified current source/test blobs. A direct `git ls-remote` / fresh clone attempt failed because this execution environment could not resolve `github.com`. Combined commit status API returned no statuses for the checked commits; that is NOT evidence of CI success. |
+| 13 — Checkpoint and repository integrity | PARTIAL | GitHub Actions run `38017180138` on `main`, commit `101fddc41a6db37c2baa91ad18a8cc22a4b37129`, completed successfully; its `Checkout repository` step passed. This verifies CI checkout for that exact commit. Direct local `git ls-remote` / clone remains unavailable in this environment due DNS resolution, and a complete independent commit/tree ancestry audit has not been performed. |
 | 14 — Golden Path hardening | PARTIAL | Current implementation enforces a 2,000-character field limit and blocks changed logical payloads reusing the same project/idempotency key. Remaining critical limitations: caller-controlled approval flag, no authenticated actor/action-target binding, state trace is not an enforced persistent state machine, idempotency is in-memory only, and evidence has no cryptographic integrity mechanism. These are recorded as blockers, not marked secure. |
 | 15 — Evidence, privacy, isolation | PARTIAL / BLOCKED | Local source/test files were reconstructed from GitHub read-back. Git blob IDs match exactly: source `c18d9cb0499f0ddff3826d55f922e455f331bc28`; test `445a22f33a184318eedb198dacde3e08e58c2a68`. A limited regex scan of those two local files reported no matches for selected common secret patterns. This is not a full secret scan or proof of cross-service isolation. No private evidence store or independent provenance bundle exists. |
 | 16 — Regression test and CI | LOCAL TEST PASS; CI NOT VERIFIED | `node --test test/golden-path.test.js` on Node.js v22.16.0 returned 10 passed, 0 failed, 0 skipped. Git blob hashes of both files matched the GitHub read-back blobs exactly. Direct GitHub checkout was blocked by DNS/network. A GitHub Actions workflow was committed at `.github/workflows/golden-path-tests.yml`, commit `ab528b65b87997d9a6add296d8f86e48993502fe`; run status could not be verified because the available status endpoint returned no statuses. Therefore CI is NOT VERIFIED, not PASS. |
@@ -41,7 +41,7 @@ The run validates the exact source and test bytes fetched from GitHub, reproduce
 
 ## Next required steps
 
-- Obtain a verifiable clean checkout/CI run when network access is available; retain logs and commit SHA.
+- Retain the verified CI run and commit SHA; complete independent commit/tree ancestry verification when direct Git access is available.
 - Design and test secure approval verification and a real state-transition guard before any action with side effects.
 - Select private evidence storage and implement/test data classification, secret scanning, and project-boundary enforcement.
 - Obtain account-specific runtime expiry/billing/persistence evidence without upgrading or consuming credits.
