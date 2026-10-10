@@ -115,3 +115,13 @@ Exit gate: at least two synthetic/test project profiles operate without cross-pr
 ## Phase 07–12 checkpoint (2026-10-09)
 
 The ordered Phase 07–12 review was performed. Phase 07 is partial pending a verified clean checkout and full commit/tree ancestry review. Phase 08 findings were documented; Phase 09 remediation and a 10-test isolated retest passed for the reference code. Phase 10 remains partial, Phase 11 specification remains DRAFT / NOT LOCKED, and Phase 12 persistent runtime remains BLOCKED by cost/persistence evidence. Full record: [Phase 07–12 Execution Report](PHASE-07-12-EXECUTION-REPORT-2026-10-09.md).
+
+
+## Phase 13–18 checkpoint (2026-10-10)
+
+- **Phase 13 — Checkpoint/integrity: PARTIAL / BLOCKED for fresh checkout.** GitHub read-back confirms the current source/test blob IDs, but `git ls-remote` failed due DNS/network resolution for github.com. No clean checkout or complete commit ancestry verification is claimed.
+- **Phase 14 — Golden Path hardening: PARTIAL.** Input size and idempotency conflict checks are implemented. Authenticated action/target-bound approval, enforced state transitions, durable idempotency, and cryptographic evidence remain open.
+- **Phase 15 — Evidence/privacy/isolation: PARTIAL / BLOCKED.** A limited regex secret-pattern scan of exact source/test bytes returned no matches; this is not full secret scanning or proof of isolation. Private evidence storage and independent provenance are not implemented.
+- **Phase 16 — Regression/CI: LOCAL TEST PASS; CI NOT VERIFIED.** Exact GitHub source/test blob bytes were reproduced locally; Node.js v22.16.0 run produced 10 passed, 0 failed. A GitHub Actions workflow was committed at `.github/workflows/golden-path-tests.yml`, but the status endpoint returned no statuses; do not call CI PASS. See [Phase 13–18 Execution Report](PHASE-13-18-EXECUTION-REPORT-2026-10-10.md).
+- **Phase 17 — Specification: DRAFT / NOT LOCKED.** Current implementation does not meet the full secure approval, state-machine, durable evidence, and isolation contract.
+- **Phase 18 — Runtime: BLOCKED / NO-GO.** Sustainable Rp0 persistence, account-specific post-trial behavior, and privacy/security gates remain unverified. No runtime/resource was created.
