@@ -145,3 +145,12 @@ Use this file to record material decisions. New entries should include date, con
 - **Context:** The GitHub Actions API was queried directly after the prior report had marked CI unverified. Run `38017180138` (`Golden Path Tests`) on `main`, commit `101fddc41a6db37c2baa91ad18a8cc22a4b37129`, completed with `conclusion: success`; job `golden-path` and its checkout, Node.js setup, and test steps were completed successfully.
 - **Decision:** Update the execution report and plan to record CI as PASS for the deterministic reference test on that exact commit. Phase 13 remains PARTIAL because independent complete commit/tree ancestry verification and direct local clone are still unavailable.
 - **Consequences:** CI PASS does not close secure approval, enforced state transitions, durable idempotency/evidence, privacy/isolation, or persistent Rp0 runtime gates. Runtime remains NO-GO and Fundamental Specification v0.1 remains DRAFT / NOT LOCKED. Evidence: https://github.com/RidzBuilder/JALA-DOTS-Lite/actions/runs/38017180138
+
+
+## D-019 — Phase 13 repository checkpoint closed using GitHub API ancestry/tree evidence
+
+- **Date:** 2026-10-10
+- **Status:** ACCEPTED WITH SCOPE LIMITATION
+- **Context:** GitHub API reports `main` head `9d7b4be5208478db48ed465c77439271544051da`. The 60 returned commits form a continuous first-parent chain, all parent links resolve within the returned history, and root commit `24dfd701fde8a5633f5a83087293b022c3c89faa` has no parent. The current recursive tree is not truncated and contains 21 entries. Current `src/golden-path.js`, `test/golden-path.test.js`, and `.github/workflows/golden-path-tests.yml` blob IDs match those in the tree for CI-tested commit `101fddc41a6db37c2baa91ad18a8cc22a4b37129`; its GitHub Actions checkout/test job succeeded.
+- **Decision:** Mark Phase 13 PASS for the GitHub API commit ancestry/tree checkpoint and CI-tested source identity. Record direct local `git clone`/`git ls-remote` as unavailable due environment DNS/network, not as a successful local checkout.
+- **Consequences:** Phase 13 closure does not imply production readiness, secure approval, durable state/evidence, privacy enforcement, or persistent Rp0 runtime. Phase 14–15 remain partial, Phase 17 remains DRAFT, and Phase 18 remains NO-GO. Evidence: https://github.com/RidzBuilder/JALA-DOTS-Lite/commits/main
